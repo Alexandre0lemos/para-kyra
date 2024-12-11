@@ -1,82 +1,25 @@
 <!DOCTYPE html>
-<html lang="es-MX">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi amor</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            height: 90vh;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            row-gap: 1em;
-        }
-
-        #img {
-            width: 20em;
-        }
-
-        body {
-            background-color: rgba(0, 0, 0, 0.911);
-            color: white;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-    </style>
+    <title>login</title>
 </head>
-
-<body id="sizeBody">
-    <h1>Foto de una linda flor</h1>
-    <main>  
-        <div id="input">
-            <label for="select">Eleges qualidad del image:</label>
-            <select name="opciones" id="select">
-                <option value="none">Select</option>
-                <option value="144p">144p</option>
-                <option value="240p">240p</option>
-                <option value="720p">720p</option>
-                <option value="1080p">1080p</option>
-            </select>
-        </div>
-    </main>
+<body>
     <script>
-        const optionsMenu = document.getElementById("select")
-        const img = new Image()
-        img.id = "img"
-
-        optionsMenu.addEventListener("change", function (x) {
-            optionSelected = this.value
-
-            if (optionSelected == "none") {
-                document.getElementsByTagName("main")[0].removeChild(img)
-                return
-            }
-
-            if (optionSelected == "1080p") {
-                img.style.height = "30em"
+        const urlSite = location.href
+        urlMae = urlSite.substring(0, urlSite.lastIndexOf("/"))
+        while (true) {
+            let acesso = prompt("digite a senha:")
+    
+            if (acesso == "14042007") {
+                window.location.href = `${urlMae}/paraKyra.html`
+                break
             } else {
-                img.style.height = "20em"
+                alert("Acesso negado")
             }
-
-            img.src = `https://alexandre0lemos.github.io/para-kyra/${optionSelected}.png`
-            document.getElementsByTagName("main")[0].appendChild(img)
-
-        })
+        }
 
     </script>
 </body>
-
 </html>
