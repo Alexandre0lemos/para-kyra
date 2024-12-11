@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            row-gap: 1em;
+        }
+
+        main {
+            display: flex;
+            column-gap: 1em;
+        }
+
+        button {
+            width: 50px;
+        }
+
+        img {
+            width: 20em;
+            height: 20em;
+        }
+    </style>
+    <title>pedido de casamento</title>
+</head>
+<body>
+    <h1>Casas conmigo?</h1>
+    <main id="pedido">
+        
+    </main>
+    <script>
+        let url = location.href
+        url = url.substring(0, url.lastIndexOf("/"))
+
+        fotoPath = `${url}/img/caixa.png`
+        
+        let nao = document.createElement("button")
+        let sim = document.createElement("button")
+        let img = new Image()
+        img.src = `${fotoPath}`
+
+        sim.innerText = "Siii <3"
+        nao.innerText = "No"
+
+        document.getElementsByTagName("main")[0].appendChild(sim)
+        document.getElementsByTagName("main")[0].appendChild(nao)
+
+
+        nao.addEventListener("click", function() {
+            nao.style.position = "absolute"
+            nao.style.top = `${Math.random() * window.innerHeight}px`
+            nao.style.left = `${Math.random() * window.innerWidth}px`
+        })
+
+        sim.addEventListener("click", function() {
+            document.getElementsByTagName("h1")[0].style.display = "none"
+            document.getElementsByTagName("main")[0].style.display = "none"
+            document.body.appendChild(img)
+        })
+        
+    </script>
+</body>
+</html>

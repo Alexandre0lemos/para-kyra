@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,10 @@
             if (acesso == "14042007") {
                 window.location.href = `${urlMae}/paraKyra.html`
                 break
-            } else {
-                alert("Acesso negado")
+            
+            } else if(acesso == "69") {
+                window.location.href = `${urlMae}/pedido.html`
+                break
             }
         }
 
